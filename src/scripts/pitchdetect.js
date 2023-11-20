@@ -1,7 +1,9 @@
-function pitchi(){
+function pitchi() {
+  console.log("Pitch detection started!");
   document.addEventListener('DOMContentLoaded', () => {
     // Check for Web Audio API support
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const AudioContext = getAudioContext();
+    console.log(AudioContext);
     if (!AudioContext) {
       alert('Web Audio API is not supported in this browser');
       return;

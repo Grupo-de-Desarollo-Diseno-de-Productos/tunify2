@@ -19,8 +19,8 @@ tabs.set("E4", "music/E4TAB.png");
 tabs.set("G3", "music/G3TAB.png");
 tabs.set("D3", "music/D3TAB.png");
 
-const noteImages = document.querySelectorAll('.note1, .note2, .note3, .note4, .note5, .note6, .note7, .note8');
-const tabImages = document.querySelectorAll('.tab1, .tab2, .tab3, .tab4, .tab5, .tab6, .tab7, .tab8');
+const noteImages = document.querySelectorAll('.note1, .note2, .note3, .note4, .note5, .note6, .note7, .note8, .note9');
+const tabImages = document.querySelectorAll('.tab1, .tab2, .tab3, .tab4, .tab5, .tab6, .tab7, .tab8, .tab9');
 
 let pos = -1;
 let currentNotes = [];
@@ -31,11 +31,11 @@ const startButton = document.querySelector('.start-button');
 let paused = true;
 startButton.addEventListener('click', () => {
     if (paused) {
-        startButton.style.display = "none";
-        startButton.style.transform = "scale(1)";
         startButton.textContent = "End";
+        startButton.classList.add("end-button");
         paused = false;
         pos = 0;
+        // calls the method pitchi from pitchdetect.js
         pitchi();
         noteImages.forEach((image, index) => {
             let randomNote;
@@ -60,7 +60,7 @@ startButton.addEventListener('click', () => {
         currentNotes = [];
         pos = -1;
         startButton.textContent = "Start";
-        startButton.style.transform = "scale(2)";
+        startButton.style.transform = "scale(1.5)";
         paused = true;
         noteImages.forEach((image) => {
             image.src = "music/blank.png";
@@ -90,4 +90,3 @@ function comparePitch() {
         });
     }
 }
-//setInterval(comparePitch, 100);

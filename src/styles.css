@@ -1,5 +1,46 @@
 .start-button {
-    background-color: #343a40;
-    transform: scale(2);
-    border: none;
+    background-color: #708090;
+    transform: scale(1.5);
+    border: none !important;
+    outline: none !important;
+
+
+}
+
+.start-button:hover {
+    background-color: #858b91;
+    border: none !important;
+    outline: none !important;
+
+
+}
+
+.start-button:active {
+    background-color: #536872 !important;
+    border: none !important;
+    outline: none !important;
+
+
+}
+
+.start-button:focus {
+    outline: none !important;
+
+    background-color: #536872;
+    border: none !important;
+
+
+}
+
+/* Custom styles can be added here */
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    /* Replace 'Your Desired Font' with the actual font you want to use */
+}
+
+.nav-text {
+    font-family: 'Montserrat', sans-serif !important;
+    /* Replace 'Your Desired Font' with the actual font you want to use */
+    color: white !important;
+    font-size: 17px !important;
 }
