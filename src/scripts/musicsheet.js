@@ -35,8 +35,6 @@ startButton.addEventListener('click', () => {
         startButton.classList.add("end-button");
         paused = false;
         pos = 0;
-        // calls the method pitchi from pitchdetect.js
-        pitchi();
         noteImages.forEach((image, index) => {
             let randomNote;
             do {
