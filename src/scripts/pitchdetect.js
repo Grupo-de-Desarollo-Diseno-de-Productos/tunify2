@@ -50,6 +50,9 @@ async function getPitch() {
       if (!paused) {
         // search for the html element with id "current-note" and set its text to the current note
         document.getElementById("current-note").innerHTML = "Current note: " + currentNote;
+
+        // search for the html element with id "target-note" and set its text to the current note
+        document.getElementById("target-note").innerHTML = "Target note: " + currentNotes[pos];
       }
       comparePitch();
     }
