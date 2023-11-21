@@ -11,7 +11,7 @@ const input = document.querySelector("#pi_input");
 value.textContent = input.value;
 input.addEventListener("input", (event) => {
   value.textContent = event.target.value;
-  confidence = event.target.value;
+  confidence = 1 - event.target.value;
 });
 
 const value2 = document.querySelector("#value2");

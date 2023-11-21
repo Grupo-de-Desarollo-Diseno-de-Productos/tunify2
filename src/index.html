@@ -35,7 +35,7 @@
             </div>
         </div>
     </nav>
-<div class="container" style="width: 100%; justify-content: center;">
+<div class="container" style="display: flex; width: 100%; justify-content: center;">
 <div class = "row" style="display: flex; width: 100%; justify-content: center;">
     <div
         id = "jeff" style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 1.5rem; width: 100%;">
@@ -74,10 +74,12 @@
 
     </div>
     <div id = "sliders" style="margin-top: 5rem; display: none; justify-content: center;">
-        <input id="pi_input" style="margin-right: 1rem; height: 70%;" type="range" min="0" max="1" value="0.8" step="0.001" orient="vertical"/>
-        <p style="writing-mode: vertical-rl; text-orientation: mixed; text-align: center; height: 70%;">Confianza: <output id="value"></output></p>
-        <input id="pi_input2" style="margin-left: 1rem; height:70%;" type="range" min="0" max="1" value="0.2" step="0.001" orient="vertical" />
-        <p style="writing-mode: vertical-rl; text-orientation: mixed; text-align: center; height: 70%;">Amplitud: <output id="value2"></output></p>
+        <div class="container">
+        <div class="row"><p style="text-align: center; height: 70%;">Sensibilidad: <output id="value"></output></p></div>
+        <div class="row"><input id="pi_input" style="height: 70%;" type="range" min="0" max="1" value="0.8" step="0.001" orient="horizontal"/></div>
+        <div class="row"><p style="text-align: center; height: 70%; margin-top: 4%;">Amplitud: <output id="value2"></output></p></div>
+        <div class="row"><input id="pi_input2" style="height:70%;" type="range" min="0" max="1" value="0.2" step="0.001" orient="horizontal" /></div>
+        </div>
     </div>
 </div>
 </div>
