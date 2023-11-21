@@ -41,13 +41,16 @@ function modelLoaded() {
 async function getPitch() {
   pitch.getPitch(function (err, frequency) {
     if (frequency && parseFloat(pitch.results.confidence) > 0.825) {
-      console.log(pitch.results.confidence);
       let midiNum = freqToMidi(frequency);
       let note = noteStrings[midiNum % 12];
       let octave = Math.floor(midiNum / 12) - 1;
       currentNote = note + octave;
-      console.log(currentNote);
       console.log("note: " + currentNote + " goal: " + currentNotes[pos]);
+      console.log("Confidance " + pitch.results.confidence);
+      if (!paused) {
+        // search for the html element with id "current-note" and set its text to the current note
+        document.getElementById("current-note").innerHTML = "Current note: " + currentNote;
+      }
       comparePitch();
     }
     getPitch();
@@ -80,8 +83,8 @@ async function comparePitch() {
 
         tabImages[index].style.opacity = "1";
       } else {
-        image.style.opacity = "0.5";
-        tabImages[index].style.opacity = "0.5";
+        image.style.opacity = "0.25";
+        tabImages[index].style.opacity = "0.25";
       }
     });
   }

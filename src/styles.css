@@ -44,3 +44,14 @@
     color: white !important;
     font-size: 17px !important;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.centered-text {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(134, 134, 134);
+}

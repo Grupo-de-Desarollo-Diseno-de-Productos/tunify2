@@ -53,11 +53,21 @@ startButton.addEventListener('click', () => {
                 image.style.opacity = "0.5";
                 tabImages[index].style.opacity = "0.5";
             }
-        });
+        }
+        );
+
+
+        // search for the html element with id "target-note" and set its text to the current note
+        document.getElementById("target-note").innerHTML = "Target note: " + currentNotes[pos];
+
     } else {
         currentNotes = [];
         pos = -1;
         startButton.textContent = "Start";
+        // search for the html element with id "current-note" and set its text to the current note
+        document.getElementById("current-note").innerHTML = "";
+        // search for the html element with id "target-note" and set its text to the current note
+        document.getElementById("target-note").innerHTML = "";
         startButton.style.transform = "scale(1.5)";
         paused = true;
         noteImages.forEach((image) => {
