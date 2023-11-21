@@ -83,6 +83,7 @@ startButton.addEventListener('click', () => {
 
 function comparePitch() {
     if (currentNote == currentNotes[pos] && !paused) {
+        perfecto();
         pos++;
         if (pos == currentNotes.length) {
             pos = 0;
