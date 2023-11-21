@@ -40,7 +40,9 @@ function modelLoaded() {
 // Recursive function that uses the machine learning model to detect the pitch of the audio input stream
 async function getPitch() {
   pitch.getPitch(function (err, frequency) {
-    if (frequency && parseFloat(pitch.results.confidence) >= 0.8) {
+    let amplitud = amplitude.getLevel();
+    if (frequency && parseFloat(pitch.results.confidence) > 0.825 && amplitud > 0.30) {
+      console.log(amplitud);
       let midiNum = freqToMidi(frequency);
       let note = noteStrings[midiNum % 12];
       let octave = Math.floor(midiNum / 12) - 1;
@@ -50,9 +52,6 @@ async function getPitch() {
       if (!paused) {
         // search for the html element with id "current-note" and set its text to the current note
         document.getElementById("current-note").innerHTML = "Current note: " + currentNote;
-
-        // search for the html element with id "target-note" and set its text to the current note
-        document.getElementById("target-note").innerHTML = "Target note: " + currentNotes[pos];
       }
       comparePitch();
     }
