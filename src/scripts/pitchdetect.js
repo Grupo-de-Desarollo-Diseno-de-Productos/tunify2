@@ -41,7 +41,7 @@ function modelLoaded() {
 async function getPitch() {
   pitch.getPitch(function (err, frequency) {
     let amplitud = amplitude.getLevel();
-    if (frequency && parseFloat(pitch.results.confidence) > 0.825 && amplitud > 0.30) {
+    if (frequency && parseFloat(pitch.results.confidence) > 0.82 && amplitud > 0.30) {
       console.log(amplitud);
       let midiNum = freqToMidi(frequency);
       let note = noteStrings[midiNum % 12];
@@ -50,8 +50,13 @@ async function getPitch() {
       console.log("note: " + currentNote + " goal: " + currentNotes[pos]);
       console.log("Confidance " + pitch.results.confidence);
       if (!paused) {
+
         // search for the html element with id "current-note" and set its text to the current note
         document.getElementById("current-note").innerHTML = "Current note: " + currentNote;
+
+        // search for the html element with id "target-note" and set its text to the current note
+        document.getElementById("target-note").innerHTML = "Target note: " + currentNotes[pos];
+
       }
       comparePitch();
     }
