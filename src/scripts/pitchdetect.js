@@ -40,7 +40,7 @@ function modelLoaded() {
 // Recursive function that uses the machine learning model to detect the pitch of the audio input stream
 async function getPitch() {
   pitch.getPitch(function (err, frequency) {
-    if (frequency && parseFloat(pitch.results.confidence) > 0.825) {
+    if (frequency && parseFloat(pitch.results.confidence) >= 0.8) {
       let midiNum = freqToMidi(frequency);
       let note = noteStrings[midiNum % 12];
       let octave = Math.floor(midiNum / 12) - 1;
@@ -86,8 +86,8 @@ async function comparePitch() {
 
         tabImages[index].style.opacity = "1";
       } else {
-        image.style.opacity = "0.25";
-        tabImages[index].style.opacity = "0.25";
+        image.style.opacity = "0.3";
+        tabImages[index].style.opacity = "0.3";
       }
     });
   }

@@ -50,8 +50,8 @@ startButton.addEventListener('click', () => {
                 image.style.opacity = "1";
                 tabImages[index].style.opacity = "1";
             } else {
-                image.style.opacity = "0.5";
-                tabImages[index].style.opacity = "0.5";
+                image.style.opacity = "0.3";
+                tabImages[index].style.opacity = "0.3";
             }
         }
         );
@@ -92,8 +92,8 @@ function comparePitch() {
                 image.style.opacity = "1";
                 tabImages[index].style.opacity = "1";
             } else {
-                image.style.opacity = "0.5";
-                tabImages[index].style.opacity = "0.5";
+                image.style.opacity = "0.3";
+                tabImages[index].style.opacity = "0.3";
             }
         });
     }
