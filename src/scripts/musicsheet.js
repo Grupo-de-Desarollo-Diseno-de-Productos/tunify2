@@ -2,7 +2,7 @@
 // Create info
 const notes = new Map();
 const tabs = new Map();
-const notesList = ["A2", "B3", "E2", "E4", "G3", "D3"];
+const notesList = ["A2", "B3", "E4", "G3", "D3"];
 
 // Add key-value pairs to the hash map
 notes.set("A2", "music/A2.png");
