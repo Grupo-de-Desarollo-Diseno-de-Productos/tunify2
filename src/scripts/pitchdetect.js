@@ -3,6 +3,25 @@
  * PITCH DETECT
  * 
  */
+let confidence = 0.8;
+let amplitudSld = 0.2;
+
+const value = document.querySelector("#value");
+const input = document.querySelector("#pi_input");
+value.textContent = input.value;
+input.addEventListener("input", (event) => {
+  value.textContent = event.target.value;
+  confidence = 1 - event.target.value;
+});
+
+const value2 = document.querySelector("#value2");
+const input2 = document.querySelector("#pi_input2");
+value2.textContent = input2.value;
+input2.addEventListener("input", (event) => {
+  value2.textContent = event.target.value;
+  amplitudSld = event.target.value;
+});
+
 
 
 // An array of strings that represents the names of musical notes
@@ -41,7 +60,7 @@ function modelLoaded() {
 async function getPitch() {
   pitch.getPitch(function (err, frequency) {
     let amplitud = amplitude.getLevel();
-    if (frequency && parseFloat(pitch.results.confidence) > 0.82 && amplitud > 0.30) {
+    if (frequency && parseFloat(pitch.results.confidence) > confidence && amplitud > amplitudSld) {
       console.log(amplitud);
       let midiNum = freqToMidi(frequency);
       let note = noteStrings[midiNum % 12];

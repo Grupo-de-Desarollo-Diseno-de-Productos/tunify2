@@ -99,3 +99,18 @@ function comparePitch() {
         });
     }
 }
+
+
+function hide() {
+    var x = document.getElementById("sliders");
+    var y = document.getElementById("jeff");
+    if (x.style.display === "none") {
+      x.style.display = "flex";
+      x.style.width = "25%";
+      y.style.width = "75%"
+    } else {
+      x.style.display = "none";
+      x.style.width = "0%";
+      y.style.width = "100%"
+    }
+  }
